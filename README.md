@@ -31,3 +31,20 @@ Snapshots:   0 total
 Time:        22.211 s
 Ran all test suites.
 ```
+
+## Solution
+Just avoid using `@aws-cdk/aws-lambda-nodejs` and use for example the [`aws-lambda-nodejs-esbuild`](https://github.com/floydspace/aws-lambda-nodejs-esbuild) instead
+
+Example test output:
+```
+ PASS  lib/simple-stack.test.ts
+  Simple Stack
+    ✓ Should have memory size set to 512MB (154 ms)
+    ✓ Should use Node 12 as runtime (57 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        2.931 s
+Ran all test suites.
+```
