@@ -1,5 +1,5 @@
 import * as cdk from '@aws-cdk/core';
-import { NodejsFunction } from '@aws-cdk/aws-lambda-nodejs';
+import { NodejsFunction } from 'aws-lambda-nodejs-esbuild';
 import { Runtime } from '@aws-cdk/aws-lambda';
 
 export class SimpleStack extends cdk.Stack {
@@ -7,7 +7,7 @@ export class SimpleStack extends cdk.Stack {
         super(scope, id, props);
 
         new NodejsFunction(this, 'HandlerLambda', {
-            entry: 'lib/app/lambda.ts',
+            handler: 'lib/app/lambda.handler',
             memorySize: 512,
             runtime: Runtime.NODEJS_12_X
         });
